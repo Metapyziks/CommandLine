@@ -20,7 +20,7 @@ namespace CommandLine
         private static bool InputMatchesOption(String input, String option)
         {
             if (option.Length == 1 && !input.StartsWith("--")) {
-                return option.Skip(1).Any(x => x == option[0]);
+                return input.Skip(1).Any(x => x == option[0]);
             }
 
             return input.Length > 1 && input.Substring(2) == option;
